@@ -16,3 +16,10 @@ It's just a CRUD Users relationed with CRUD Group
 - CRUD Groups
 - Reference: `Users`:`Group` -> `Groups`:`Name`
 
+## Getting Started
+
+```sh
+git clone --depth=1 https://github.com/afsec/cellular-js-example-app
+cd cellular-js-example-app
+./build.sh
+```
