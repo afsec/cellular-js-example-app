@@ -6,7 +6,7 @@ Just a Web App powered by Cellular JS (https://github.com/afsec/cellular-js/)
 
 It's just a CRUD Users relationed with CRUD Group
 
-## Rendered State: ShowUsersPage
+## Rendered States:
 
 ![Show Users page](/docs/01-state-showuserspage.png?raw=true)
 
