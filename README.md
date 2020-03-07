@@ -1,5 +1,7 @@
 #  Example App powered by Cellular JS
 
+Just a Web App powered by Cellular JS (https://github.com/afsec/cellular-js/)
+
 ## Project Overview
 
 It's just a CRUD Users relationed with CRUD Group
