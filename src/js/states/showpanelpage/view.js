@@ -19,11 +19,11 @@ const stateShowPanelPageView = (obj) => {
                             <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-right" style="left: 674px; top: 80px;">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li class="uk-nav-header uk-text-small uk-text-primary">YOUR ACCOUNT</li>
-                                    <li><a href="#"><span data-uk-icon="icon: info" class="uk-icon"></span> Summary</a></li>
-                                    <li><a href="#"><span data-uk-icon="icon: refresh" class="uk-icon"></span> Edit</a></li>
-                                    <li><a href="#"><span data-uk-icon="icon: settings" class="uk-icon"></span> Configuration</a></li>
+                                    <li><a href="#"><span data-uk-icon="icon: thumbnails" class="uk-icon"></span> Dashboards</a></li>
+                                    <li><a href="#"><span data-uk-icon="icon: credit-card" class="uk-icon"></span> Payments</a></li>
+                                    <li><a href="#"><span data-uk-icon="icon: cog" class="uk-icon"></span> Configuration</a></li>
                                     <li class="uk-nav-divider"></li>
-                                    <li><a href="#"><span data-uk-icon="icon: image" class="uk-icon"></span> Your Pictures</a></li>
+                                    <li><a href="#"><span data-uk-icon="icon: database" class="uk-icon"></span> Your Data</a></li>
                                     <li class="uk-nav-divider"></li>
                                     <li><a href="#"><span data-uk-icon="icon: sign-out" class="uk-icon"></span> Logout</a></li>
                                 </ul>
