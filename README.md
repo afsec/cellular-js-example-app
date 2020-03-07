@@ -14,7 +14,8 @@ It's just a CRUD Users relationed with CRUD Group
 
 - CRUD Users
 - CRUD Groups
-- Reference: `Users`:`Group` -> `Groups`:`Name`
+- Reference: `Users`:`Department` -> `Departments`:`Name`
+- Reference: `Users`:`Permission` -> `Permissions`:`Name`
 
 ## Getting Started
 
