@@ -4,7 +4,11 @@
 
 It's just a CRUD Users relationed with CRUD Group
 
-**General functionality:**
+## Auto-generated current callgraph
+
+![Current Callgraph](/docs/01-callgraph.png?raw=true)
+
+## General functionality
 
 - CRUD Users
 - CRUD Groups
