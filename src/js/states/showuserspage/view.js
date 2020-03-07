@@ -25,7 +25,7 @@ const stateShowUsersPageView = (obj) => {
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="email">
-                    <span class="data-content">root@example.com</span>
+                    <span class="data-content">root@example.net</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="department">
@@ -64,7 +64,7 @@ const stateShowUsersPageView = (obj) => {
             <tr>
                 <td>4</td>
                 <td>Tony Coast</td>
-                <td>tony@example.com</td>
+                <td>tony@example.net</td>
                 <td>Accounting</td>
                 <td>User</td>
                 <td>
