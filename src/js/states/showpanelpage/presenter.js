@@ -14,9 +14,16 @@ const stateShowPanelPagePresenter = () => {
         })
     })
 
-    waitForElement({ "selector": "a#menu-item-groups" }, () => {
-        document.querySelector('a#menu-item-groups').addEventListener('click', () => {
-            stateShowGroupsPage()
+    waitForElement({ "selector": "a#menu-item-departments" }, () => {
+        document.querySelector('a#menu-item-departments').addEventListener('click', () => {
+            stateShowDepartmentsPage()
+            // debug('Groups Page')
+        })
+    })
+
+    waitForElement({ "selector": "a#menu-item-permissions" }, () => {
+        document.querySelector('a#menu-item-permissions').addEventListener('click', () => {
+            stateShowPermissionsPage()
             // debug('Groups Page')
         })
     })

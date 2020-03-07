@@ -8,7 +8,8 @@ const stateShowPanelPageView = (obj) => {
                     <a class="uk-navbar-item uk-logo" href="#">Admin Panel</a>
                     <ul class="uk-navbar-nav">
                         <li class="uk-active"><a id="menu-item-users">Users</a></li>
-                        <li><a id="menu-item-groups" >Groups</a></li>
+                        <li><a id="menu-item-departments">Departments</a></li>
+                        <li><a id="menu-item-permissions">permissions</a></li>
                     </ul>
                 </div>
             </div>
