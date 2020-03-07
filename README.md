@@ -13,7 +13,8 @@ It's just a CRUD Users relationed with CRUD Group
 ## General functionality
 
 - CRUD Users
-- CRUD Groups
+- CRUD Departments
+- CRUD Permissions
 - Reference: `Users`:`Department` -> `Departments`:`Name`
 - Reference: `Users`:`Permission` -> `Permissions`:`Name`
 
