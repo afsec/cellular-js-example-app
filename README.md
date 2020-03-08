@@ -18,7 +18,7 @@ It's Users CRUD with some other CRUD references.
 
 ---
 
-## Auto-generated current callgraph
+## Current callgraph
 
 ![Current Callgraph](/docs/02-callgraph.png?raw=true)
 
