@@ -20,7 +20,7 @@ const stateShowUsersPageView = (obj) => {
             <div>
                 <div class="uk-panel">
                     <select class="uk-select">
-                        <option>Role</option>
+                        <option>Permission</option>
                         <option>Option 01</option>
                         <option>Option 02</option>
                     </select>

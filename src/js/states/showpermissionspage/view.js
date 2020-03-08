@@ -4,6 +4,7 @@ const stateShowPermissionsPageView = (obj) => {
     <div class="uk-overflow-auto uk-margin-medium-top">
         <h1>Permissions</h1>
         <button class="uk-button uk-button-default">New</button>
+        <hr/>
         <table class="uk-table uk-table-divider uk-table-hover uk-table-small">
             <thead>
                 <tr>

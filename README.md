@@ -6,9 +6,13 @@ Just a Web App powered by Cellular JS (https://github.com/afsec/cellular-js/)
 
 It's just a CRUD Users relationed with CRUD Group
 
-## Rendered States:
 
-![Show Users page](/docs/01-state-showuserspage.png?raw=true)
+## Screenshot
+![Screenshot](/docs/00-app-screenshot.png?raw=true)
+
+## States Concept:
+
+![States Concept](/docs/01-state-showuserspage.png?raw=true)
 
 ## Auto-generated current callgraph
 
