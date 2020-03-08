@@ -10,13 +10,19 @@ It's just a CRUD Users relationed with CRUD Group
 ## Screenshot
 ![Screenshot](/docs/00-app-screenshot.png?raw=true)
 
+---
+
 ## States Concept:
 
 ![States Concept](/docs/01-state-showuserspage.png?raw=true)
 
+---
+
 ## Auto-generated current callgraph
 
 ![Current Callgraph](/docs/02-callgraph.png?raw=true)
+
+---
 
 ## General functionality
 
@@ -25,6 +31,8 @@ It's just a CRUD Users relationed with CRUD Group
 - CRUD Permissions
 - Reference: `Users`:`Department` -> `Departments`:`Name`
 - Reference: `Users`:`Permission` -> `Permissions`:`Name`
+
+---
 
 ## Getting Started
 
