@@ -6,8 +6,10 @@ const stateShowLogoutPageView = (obj) => {
             <h1>Logout</h1>
             <span class="uk-text-danger" uk-icon="icon: unlock; ratio: 2"></span>
             <h2>Thank you for using or system.</h2>
-            <h3>We hope you enjoy the experience we made.</h3>
+            <h3>We hope you enjoyed the experience we produced.</h3>
+            <!--
             <p class="uk-text-large">Now you will be redirected to Login Page.</p>
+            -->
         </div>
     </div>
     `
