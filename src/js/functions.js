@@ -24,7 +24,7 @@ const waitForElement = (props, callBack) => {
             tries = props["tries"]
         } else {
             tries = 0
-            debug('WFE: ERROR -> undefined tries')
+            debug('WFE: INFO -> undefined tries')
         }
 
         tries += 1
