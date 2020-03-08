@@ -30,7 +30,7 @@ const getArrIdx = (arr, id) => {
 // Worker Internal State
 const databaseData = {
     "metadata": {},
-    "tables": [
+    "datasets": [
         {
             "id": 1,
             "name": "permissions",
@@ -73,6 +73,26 @@ const databaseData = {
         },
         {
             "id": 3,
+            "name": "statuses",
+            "metadata": {},
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Enabled"
+                },
+                {
+                    "id": 2,
+                    "name": "Disabled"
+                },
+                {
+                    "id": 3,
+                    "name": "Blocked"
+                },
+
+            ]
+        },
+        {
+            "id": 4,
             "name": "users",
             "metadata": {},
             "data": [
@@ -81,36 +101,42 @@ const databaseData = {
                     "name": "Charlie Root",
                     "email": "root@example.net",
                     "department": 1,
-                    "permission": 1
+                    "permission": 1,
+                    "status": 1
                 },
                 {
                     "id": 2,
                     "name": "John Doe",
                     "email": "john@example.net",
                     "department": 1,
-                    "permission": 2
+                    "permission": 2,
+                    "status": 1
                 },
                 {
                     "id": 3,
                     "name": "Alice Stark",
                     "email": "alice@example.net",
                     "department": 3,
-                    "permission": 3
+                    "permission": 3,
+                    "status": 1
+                },
+                {
+                    "id": 4,
+                    "name": "Jack Parker",
+                    "email": "jack@example.net",
+                    "department": 2,
+                    "permission": 3,
+                    "status": 2
                 },
                 {
                     "id": 4,
                     "name": "Tony Coast",
                     "email": "tony@example.net",
                     "department": 2,
-                    "permission": 3
+                    "permission": 3,
+                    "status": 1
                 },
-                {
-                    "id": 5,
-                    "name": "Jack Parker",
-                    "email": "jack@example.net",
-                    "department": 2,
-                    "permission": 3
-                },
+
             ]
         },
     ]
