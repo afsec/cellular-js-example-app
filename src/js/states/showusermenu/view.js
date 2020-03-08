@@ -17,7 +17,6 @@ const stateShowUserMenuView = (obj) => {
                 </ul>
             </div>
         </li>
-        <li class="uk-hidden@m"><a class="uk-navbar-toggle uk-icon uk-navbar-toggle-icon" data-uk-toggle="" data-uk-navbar-toggle-icon="" href="#offcanvas-nav"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="navbar-toggle-icon"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a></li>
     </ul>
     `
 }

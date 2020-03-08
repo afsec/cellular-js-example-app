@@ -104,9 +104,10 @@ compile() {
     time java -jar $COMPILER -O ADVANCED_OPTIMIZATIONS --js ${DEBUG_FILE} --js_output_file ${TMP_DIR}/main-compiled.js --language_in ECMASCRIPT_2018 --language_out $LANG_OUT
 }
 
-compile_login() {
+compile_worker() {
+    
     printf "\tRunning $FUNCNAME...\n"
-    time java -jar $COMPILER -O ADVANCED_OPTIMIZATIONS --js ${LOGINJS_FILE} --js_output_file ${TMP_DIR}/login.js --language_in ECMASCRIPT_2018 --language_out $LANG_OUT
+    time java -jar $COMPILER -O ADVANCED_OPTIMIZATIONS --js ${SRC_DIR}/js/worker.js --js_output_file ${TMP_DIR}/worker.js --language_in ECMASCRIPT_2018 --language_out $LANG_OUT
 }
 
 fix_index() {
@@ -143,6 +144,8 @@ copy_assets() {
     cp -v ${SRC_DIR}/js/uikit.min.js $DIST_FRONT_DIR/js/
     cp -v ${SRC_DIR}/js/uikit-icons.min.js $DIST_FRONT_DIR/js/
 
+    #cp -v ${SRC_DIR}/js/worker.js $DIST_FRONT_DIR/js/
+    cp -v ${TMP_DIR}/worker.js $DIST_FRONT_DIR/js/worker.js
     cp -v ${TMP_DIR}/main-compiled.js $DIST_FRONT_DIR/js/main.${BUILD}.js
 }
 
@@ -167,6 +170,7 @@ run_server() {
 main() {
     clean_dist
     merge_code
+    compile_worker
     compile
     fix_index
     copy_assets
