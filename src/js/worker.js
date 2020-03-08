@@ -194,4 +194,4 @@ setInterval(() => {
         debug('messageDenqueueAll()')
         messageDequeueAll()
     }
-}, 1000);
+}, 500);
