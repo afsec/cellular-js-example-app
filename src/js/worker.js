@@ -145,7 +145,7 @@ const databaseData = {
 const isValidDataset = tableName => {
     debug('isValidDataset()')
     if (typeof (tableName) === "string") {
-        if (databaseData["tables"].findIndex(item => item["name"] === tableName) > -1) {
+        if (databaseData["datasets"].findIndex(item => item["name"] === tableName) > -1) {
             return true
         } else {
             return false
