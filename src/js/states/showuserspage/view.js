@@ -80,7 +80,7 @@ const stateShowUsersPageView = (obj) => {
                 <td>John Doe</td>
                 <td>john@example.net</td>
                 <td>IT</td>
-                <td>Technical</td>
+                <td>Manager</td>
                 <td role="status">
                     <span role="active" class="data-content uk-label uk-label-success">Active</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
@@ -94,7 +94,7 @@ const stateShowUsersPageView = (obj) => {
                 <td>Alice Stark</td>
                 <td>alice@example.net</td>
                 <td>Marketing</td>
-                <td>User</td>
+                <td>Manager</td>
                 <td role="status">
                     <span role="active" class="data-content uk-label uk-label-success">Active</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
@@ -106,12 +106,12 @@ const stateShowUsersPageView = (obj) => {
             </tr>
             <tr>
                 <td>4</td>
-                <td>Jack Parker</td>
-                <td>jack@example.net</td>
+                <td>Tony Coast</td>
+                <td>tony@example.net</td>
                 <td>Accounting</td>
-                <td>User</td>
+                <td>Manager</td>
                 <td role="status">
-                    <span role="active" class="data-content uk-label uk-label-warning">Disabled</span>
+                    <span role="active" class="data-content uk-label uk-label-success">Active</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td>
@@ -120,12 +120,12 @@ const stateShowUsersPageView = (obj) => {
             </tr>
             <tr>
                 <td>5</td>
-                <td>Tony Coast</td>
-                <td>tony@example.net</td>
+                <td>Jack Parker</td>
+                <td>jack@example.net</td>
                 <td>Accounting</td>
                 <td>User</td>
                 <td role="status">
-                    <span role="active" class="data-content uk-label uk-label-success">Active</span>
+                    <span role="disabled" class="data-content uk-label uk-label-warning">Disabled</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td>

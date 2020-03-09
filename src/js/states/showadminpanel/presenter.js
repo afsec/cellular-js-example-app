@@ -26,5 +26,11 @@ const stateShowAdminPanelPresenter = () => {
             stateShowPermissionsPage()
         })
     })
+
+    waitForElement({ "selector": "a#menu-item-messages" }, () => {
+        document.querySelector('a#menu-item-messages').addEventListener('click', () => {
+            stateShowMessagesPage()
+        })
+    })
 }
 
