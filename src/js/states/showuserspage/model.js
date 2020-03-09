@@ -1,11 +1,26 @@
-const stateShowUsersPageModel = () => {
+const stateShowUsersPageModel = async () => {
     debug(`stateShowUsersPageModel()`)
-    // TODO: To use `Promise`, `async`, `await`
+    const users = await fetch('/api/users.json')
+        .then(response => response.json())
+        .then(data => data)
 
-    // ! Bug trigger
-    // stateShowUsersPage.internalState.database.push({ "id": 1, "name": "Test"})
+    const departments = await fetch('/api/departments.json')
+        .then(response => response.json())
+        .then(data => data)
 
-    // return stateShowUsersPage.internalState["database"]
-    return {}
+    const permissions = await fetch('/api/permissions.json')
+        .then(response => response.json())
+        .then(data => data)
+
+    const statuses = await fetch('/api/statuses.json')
+        .then(response => response.json())
+        .then(data => data)
+
+    const obj = {
+        "users": users,
+        "departments": departments,
+        "permissions": permissions,
+        "statuses": statuses
+    }
+    return obj
 }
-

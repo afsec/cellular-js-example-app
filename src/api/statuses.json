@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Enabled"
+    },
+    {
+        "id": 2,
+        "name": "Disabled"
+    },
+    {
+        "id": 3,
+        "name": "Blocked"
+    }
+]

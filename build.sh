@@ -11,7 +11,6 @@ PROD_DIR="$PWD/prod"
 DIST_FRONT_DIR="${DIST_DIR}/htdocs/pages"
 DIST_JS_DIR="${DIST_FRONT_DIR}/js"
 
-
 DEBUG_FILE="${TMP_DIR}/main-compiler.js"
 TO_DOT_FILE="${TMP_DIR}/main-debug.js"
 
@@ -21,7 +20,6 @@ LANG_OUT="STABLE"
 COMPILER="$HOME/bin/closure-compiler.jar"
 
 LOGINJS_FILE="${SRC_DIR}/public_htdocs/login.js"
-
 
 [ X"$1" == X"-p" ] && DEBUG="FALSE" || DEBUG="TRUE"
 
@@ -105,7 +103,7 @@ compile() {
 }
 
 compile_worker() {
-    
+
     printf "\tRunning $FUNCNAME...\n"
     time java -jar $COMPILER -O ADVANCED_OPTIMIZATIONS --js ${SRC_DIR}/js/worker.js --js_output_file ${TMP_DIR}/worker.js --language_in ECMASCRIPT_2018 --language_out $LANG_OUT
 }
@@ -120,16 +118,13 @@ copy_assets() {
     printf "\tRunning $FUNCNAME...\n"
     # mkdir -p ${DIST_FRONT_DIR}/font
     mkdir -p ${DIST_FRONT_DIR}/css
+    mkdir -p ${DIST_FRONT_DIR}/api
     mkdir -p ${DIST_JS_DIR}
 
     #mkdir ${DIST_FRONT_DIR}/webfonts
     #mkdir ${DIST_FRONT_DIR}/extlibs
     #mkdir -p ${DIST_FRONT_DIR}/assets/img
 
-    #cp ${SRC_DIR}/css/normalize.css $DIST_FRONT_DIR/css/
-    #cp ${SRC_DIR}/css/fontawesome.css $DIST_FRONT_DIR/css/
-    #cp ${SRC_DIR}/css/m.css $DIST_FRONT_DIR/css/
-    #cp ${SRC_DIR}/css/l.css $DIST_FRONT_DIR/css/
     #cp ${SRC_DIR}/css/jodit.css $DIST_FRONT_DIR/css/
     #cp ${SRC_DIR}/css/print.css $DIST_FRONT_DIR/css/
     #cp ${SRC_DIR}/css/bootstrap.min.css $DIST_FRONT_DIR/css/
@@ -143,6 +138,8 @@ copy_assets() {
 
     cp -v ${SRC_DIR}/js/uikit.min.js $DIST_FRONT_DIR/js/
     cp -v ${SRC_DIR}/js/uikit-icons.min.js $DIST_FRONT_DIR/js/
+
+    cp -v ${SRC_DIR}/api/* $DIST_FRONT_DIR/api/
 
     #cp -v ${SRC_DIR}/js/worker.js $DIST_FRONT_DIR/js/
     cp -v ${TMP_DIR}/worker.js $DIST_FRONT_DIR/js/worker.js

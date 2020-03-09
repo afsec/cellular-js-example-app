@@ -1,8 +1,6 @@
-const stateShowUsersPageView = (obj) => {
+const stateShowUsersPageView = async (obj) => {
     debug(`stateShowUsersPageView()`)
-    debug(obj)
-    debug('---')
-    const page = `
+    let page = `
     <div class="uk-overflow-auto uk-margin-medium-top">
         <h1>Users</h1>
         <button class="uk-button uk-button-default">New</button>
@@ -11,9 +9,16 @@ const stateShowUsersPageView = (obj) => {
             <div class="uk-first-column">
                 <div class="uk-panel">
                     <select class="uk-select">
-                        <option>Department</option>
-                        <option>Option 01</option>
-                        <option>Option 02</option>
+                    <option>Department</option>
+    `
+    // TODO: To create a state called `ShowUsersPageShowFilters`
+    await obj["departments"].forEach(row => {
+        page += `
+        <option>${row["name"]}</option>
+        `
+    })
+
+    page += `
                     </select>
                 </div>
             </div>
@@ -21,8 +26,12 @@ const stateShowUsersPageView = (obj) => {
                 <div class="uk-panel">
                     <select class="uk-select">
                         <option>Permission</option>
-                        <option>Option 01</option>
-                        <option>Option 02</option>
+    `
+    await obj["permissions"].forEach(row => {
+        page += `<option>${row["name"]}</option>`
+    })
+
+    page += `
                     </select>
                 </div>
             </div>
@@ -30,8 +39,13 @@ const stateShowUsersPageView = (obj) => {
                 <div class="uk-panel">
                     <select class="uk-select">
                         <option>Status</option>
-                        <option>Option 01</option>
-                        <option>Option 02</option>
+    `
+
+    await obj["statuses"].forEach(row => {
+        page += `<option>${row["name"]}</option>`
+    })
+
+    page += `
                     </select>
                 </div>
             </div>
@@ -49,90 +63,42 @@ const stateShowUsersPageView = (obj) => {
             </tr>
         </thead>
         <tbody>
+    `
+
+    // TODO: To create a state called `ShowUsersPageRenderUkLabel`
+    obj["users"].forEach(row => {
+        page += `
             <tr>
-                <td>1</td>
+                <td role="id">${row["id"]}</td>
                 <td role="name">
-                    <span class="data-content">Charlie Root</span>
+                    <span class="data-content">${row["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="email">
-                    <span class="data-content">root@example.net</span>
+                    <span class="data-content">${row["email"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="department">
-                    <span class="data-content">IT</span>
+                    <span class="data-content">${row["department"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="permission">
-                    <span class="data-content">Administrator</span>
+                    <span class="data-content">${row["permission"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="status">
-                    <span role="active" class="data-content uk-label uk-label-success">Active</span>
+                    <span role="active" class="data-content uk-label uk-label-success">${row["status"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="delete">
                     <a class="uk-icon-link uk-icon" uk-icon="icon: trash">
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>John Doe</td>
-                <td>john@example.net</td>
-                <td>IT</td>
-                <td>Manager</td>
-                <td role="status">
-                    <span role="active" class="data-content uk-label uk-label-success">Active</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: trash">
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Alice Stark</td>
-                <td>alice@example.net</td>
-                <td>Marketing</td>
-                <td>Manager</td>
-                <td role="status">
-                    <span role="active" class="data-content uk-label uk-label-success">Active</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: trash">
-                </td>
+        `
+    })
 
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Tony Coast</td>
-                <td>tony@example.net</td>
-                <td>Accounting</td>
-                <td>Manager</td>
-                <td role="status">
-                    <span role="active" class="data-content uk-label uk-label-success">Active</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: trash">
-                </td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Jack Parker</td>
-                <td>jack@example.net</td>
-                <td>Accounting</td>
-                <td>User</td>
-                <td role="status">
-                    <span role="disabled" class="data-content uk-label uk-label-warning">Disabled</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: trash">
-                </td>
-            </tr>
-        </tbody>
+    page += `
+            </tbody>
     </table>
     </div>
     `
