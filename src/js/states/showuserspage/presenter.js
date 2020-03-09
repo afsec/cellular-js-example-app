@@ -5,6 +5,7 @@ const stateShowUsersPagePresenter = async () => {
     // AddEvenListener, innerHTML or Call Another State.
     waitForElement({ "selector": "div#page-content" }, () => {
         document.querySelector('div#page-content').innerHTML = view
+        stateShowUsersPageShowFilters()
     })
 }
 
