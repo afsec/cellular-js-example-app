@@ -6,7 +6,7 @@ const stateShowUsersPageView = async (obj) => {
         <button class="uk-button uk-button-default">New</button>
         <hr/>
         <div id="show-filters" class="uk-grid-divider uk-child-width-expand@s" uk-grid></div>
-        <table class="uk-table uk-table-divider uk-table-hover uk-table-small">
+        <table id="users-table" class="uk-table uk-table-divider uk-table-hover uk-table-small">
         <thead>
             <tr>
                 <th>ID</th>
@@ -31,23 +31,23 @@ const stateShowUsersPageView = async (obj) => {
         page += `
             <tr>
                 <td role="id">${row["id"]}</td>
-                <td role="name">
+                <td role="name" class="editable-cell">
                     <span class="data-content">${row["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
-                <td role="email">
+                <td role="email" class="editable-cell">
                     <span class="data-content">${row["email"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
-                <td role="department">
+                <td role="department" class="editable-cell">
                     <span class="data-content">${obj["departments"][getArrIdx(obj["departments"],row["department"])]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
-                <td role="permission">
+                <td role="permission" class="editable-cell">
                     <span class="data-content">${obj["permissions"][getArrIdx(obj["permissions"],row["permission"])]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
-                <td role="status">
+                <td role="status" class="editable-cell">
                     <span role="active" class="data-content uk-label ${statusMapUkLabel[row["status"]]}">${obj["statuses"][getArrIdx(obj["statuses"],row["status"])]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
@@ -59,9 +59,12 @@ const stateShowUsersPageView = async (obj) => {
     })
 
     page += `
+            <tr id="last-row"></tr>
             </tbody>
     </table>
     </div>
+    <!-- Modal -->
+    <div id="users-modal" uk-modal></div>
     `
     return page
 }

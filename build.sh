@@ -167,7 +167,7 @@ run_server() {
 main() {
     clean_dist
     merge_code
-    compile_worker
+    #compile_worker
     compile
     fix_index
     copy_assets
