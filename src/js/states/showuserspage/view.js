@@ -35,15 +35,15 @@ const stateShowUsersPageView = async (obj) => {
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="department">
-                    <span class="data-content">${row["department"]}</span>
+                    <span class="data-content">${obj["departments"][getArrIdx(obj["departments"],row["department"])]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="permission">
-                    <span class="data-content">${row["permission"]}</span>
+                    <span class="data-content">${obj["permissions"][getArrIdx(obj["permissions"],row["permission"])]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="status">
-                    <span role="active" class="data-content uk-label uk-label-success">${row["status"]}</span>
+                    <span role="active" class="data-content uk-label ${row["status"] === 1 ? `uk-label-success`: `uk-label-danger`}">${obj["statuses"][getArrIdx(obj["statuses"],row["status"])]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="delete">
