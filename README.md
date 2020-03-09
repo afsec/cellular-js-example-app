@@ -8,17 +8,18 @@ It's Users CRUD with some other CRUD references.
 
 
 ## Screenshot
+
 ![Screenshot](/docs/00-app-screenshot.png?raw=true)
 
 ---
 
-## States Concept:
+## States Concept
 
 ![States Concept](/docs/01-state-showuserspage.png?raw=true)
 
 ---
 
-## Current callgraph
+## Callgraph sample
 
 ![Current Callgraph](/docs/02-callgraph.svg?sanitize=true)
 
