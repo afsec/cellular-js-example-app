@@ -1,15 +1,82 @@
 const stateShowUsersPageShowModalView = async (obj) => {
     debug(`stateShowUsersPageShowModalView()`)
-    const page = `
-    <div class="uk-modal-dialog uk-modal-body">
-        <h2 class="uk-modal-title">Headline</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="uk-text-right">
-            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button class="uk-button uk-button-primary" type="button">Save</button>
-        </p>
-    </div>
+    const modalText = () => {
+        debug('modalText()')
+        const roleName = obj["role"]
+        const contentData = obj["content"][roleName]
+
+        const modal = `
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Update</h2>
+                <div>
+                    <label class="uk-form-label">${roleName}: </label>
+                    <input class="uk-input" type="text" value="${contentData}">
+                </div>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <button class="uk-button uk-button-primary" type="button">Save</button>
+                </p>
+                <span id="rendered-modal"></span>
+            </div>
     `
-    return page
+        return modal
+    }
+
+    const modalSelect = () => {
+        debug('modalSelect()')
+        const roleName = obj["role"]
+        const contentData = obj["content"][roleName] / 1
+
+        const modal = `
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Update</h2>
+                <div>
+                    <label class="uk-form-label">${roleName}: </label>
+                    <input class="uk-input" type="text" value="${contentData}">
+                </div>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <button class="uk-button uk-button-primary" type="button">Save</button>
+                </p>
+                <span id="rendered-modal"></span>
+            </div>
+    `
+        return modal
+    }
+
+    const modalDeleteConfirmation = () => {
+        debug('modalDeleteConfirmation()')
+        const contentData = obj["content"]["name"]
+
+        const modal = `
+            <div class="uk-modal-dialog">
+                    <div class="uk-modal-body">
+                        Confirm user: <strong>${contentData}</strong> deletion?
+                    </div>
+                        <div class="uk-modal-footer uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <button class="uk-button uk-button-primary" autofocus="">Ok</button>
+                    </div>
+                    <span id="rendered-modal"></span>
+            </div>
+        `
+        return modal
+    }
+
+    const renderModal = (roleName) => {
+        const roleToFunc = {
+            "name": modalText,
+            "email": modalText,
+            "department": modalSelect,
+            "permission": modalSelect,
+            "status": modalSelect,
+            "delete": modalDeleteConfirmation
+        }
+        const renderedModal = roleToFunc[`${roleName}`]()
+        return renderedModal
+    }
+
+    return renderModal(obj["role"])
+
 }
 

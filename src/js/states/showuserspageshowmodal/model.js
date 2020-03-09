@@ -10,7 +10,7 @@ const stateShowUsersPageShowModalModel = async (event) => {
 
     const obj = {
         "content": user,
-        "column": rowRole
+        "role": rowRole
     }
 
     return obj
