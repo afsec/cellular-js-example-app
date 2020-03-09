@@ -3,7 +3,7 @@ const stateShowUsersPageView = async (obj) => {
     let page = `
     <div class="uk-overflow-auto uk-margin-medium-top">
         <h1>Users</h1>
-        <button class="uk-button uk-button-default">New</button>
+        <button id="new-user" class="uk-button uk-button-default">New</button>
         <hr/>
         <div id="show-filters" class="uk-grid-divider uk-child-width-expand@s" uk-grid></div>
         <table id="users-table" class="uk-table uk-table-divider uk-table-hover uk-table-small">

@@ -3,8 +3,6 @@ const stateShowUsersPageShowModalPresenter = async (event) => {
     const model = await stateShowUsersPageShowModalModel(event)
     const view = await stateShowUsersPageShowModalView(model)
     // AddEvenListener, innerHTML or Call Another State.
-    debug('view')
-    debug(view)
     const modalEntrypoint = 'div#users-modal'
     waitForElement({ "selector": `${modalEntrypoint}` }, () => {
         document.querySelector(modalEntrypoint).innerHTML = view
