@@ -20,8 +20,13 @@ const stateShowUsersPageView = async (obj) => {
         </thead>
         <tbody>
     `
+    const statusMapUkLabel = [
+        "",
+        "uk-label-success",
+        "uk-label-warning",
+        "uk-label-danger",
+    ]
 
-    // TODO: To create a state called `ShowUsersPageRenderUkLabel`
     obj["users"].forEach(row => {
         page += `
             <tr>
@@ -43,7 +48,7 @@ const stateShowUsersPageView = async (obj) => {
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="status">
-                    <span role="active" class="data-content uk-label ${row["status"] === 1 ? `uk-label-success`: `uk-label-danger`}">${obj["statuses"][getArrIdx(obj["statuses"],row["status"])]["name"]}</span>
+                    <span role="active" class="data-content uk-label ${statusMapUkLabel[row["status"]]}">${obj["statuses"][getArrIdx(obj["statuses"],row["status"])]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="delete">
