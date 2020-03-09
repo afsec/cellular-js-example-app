@@ -20,7 +20,7 @@ It's Users CRUD with some other CRUD references.
 
 ## Current callgraph
 
-![Current Callgraph](/docs/02-callgraph.png?raw=true)
+![Current Callgraph](/docs/02-callgraph.svg?raw=true)
 
 ---
 
