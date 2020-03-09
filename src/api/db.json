@@ -1,0 +1,86 @@
+{
+    "departments": [
+        {
+            "id": 1,
+            "name": "IT"
+        },
+        {
+            "id": 2,
+            "name": "Accounting"
+        },
+        {
+            "id": 3,
+            "name": "Marketing"
+        }
+    ],
+    "permissions": [
+        {
+            "id": 1,
+            "name": "Administrator"
+        },
+        {
+            "id": 2,
+            "name": "Technical"
+        },
+        {
+            "id": 3,
+            "name": "User"
+        }
+    ],
+    "statuses": [
+        {
+            "id": 1,
+            "name": "Enabled"
+        },
+        {
+            "id": 2,
+            "name": "Disabled"
+        },
+        {
+            "id": 3,
+            "name": "Blocked"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Charlie Root",
+            "email": "root@example.net",
+            "department": 1,
+            "permission": 1,
+            "status": 1
+        },
+        {
+            "id": 2,
+            "name": "John Doe",
+            "email": "john@example.net",
+            "department": 1,
+            "permission": 2,
+            "status": 1
+        },
+        {
+            "id": 3,
+            "name": "Alice Stark",
+            "email": "alice@example.net",
+            "department": 3,
+            "permission": 3,
+            "status": 1
+        },
+        {
+            "id": 4,
+            "name": "Jack Parker",
+            "email": "jack@example.net",
+            "department": 2,
+            "permission": 3,
+            "status": 2
+        },
+        {
+            "id": 5,
+            "name": "Tony Coast",
+            "email": "tony@example.net",
+            "department": 2,
+            "permission": 3,
+            "status": 1
+        }
+    ]
+}
