@@ -14,25 +14,25 @@ const stateShowUsersPageNewUserView = async (obj) => {
                         <div class="uk-margin">
                             <label class="uk-form-label">Name:</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input uk-form-width-large" type="text" placeholder="First Last">
+                                <input role="name" class="form-field uk-input uk-form-width-large" type="text" placeholder="First Last">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label">E-mail:</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input uk-form-width-large" type="text" placeholder="email@example.net">
+                                <input role="email" class="form-field uk-input uk-form-width-large" type="text" placeholder="email@example.net">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label">Department:</label>
                             <div class="uk-form-controls">
-                                <select class="uk-select uk-form-width-large">
+                                <select role="department" class="form-field uk-select uk-form-width-large">
                                 <option></option>
     `
     await obj["departments"].forEach(row => {
-        page += `<option>${row["name"]}</option>`
+        page += `<option value="${row["id"]}">${row["name"]}</option>`
     })
 
     page += `
@@ -43,24 +43,25 @@ const stateShowUsersPageNewUserView = async (obj) => {
                         <div class="uk-margin">
                             <label class="uk-form-label">Permission:</label>
                             <div class="uk-form-controls">
-                                <select class="uk-select uk-form-width-large">
+                                <select role="permission" class="form-field uk-select uk-form-width-large">
                                     <option></option>
     `
     await obj["permissions"].forEach(row => {
-        page += `<option>${row["name"]}</option>`
+        page += `<option value="${row["id"]}">${row["name"]}</option>`
     })
 
     page += `
                                 </select>
                             </div>
                         </div>
+                        <input role="status" class="form-field" type="hidden" value="1">
 
                     </form>
                 </div>
 
                 <div class="uk-modal-footer uk-text-right">
                     <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                    <button class="uk-button uk-button-primary" type="button">Save</button>
+                    <button id="save-form" class="uk-button uk-button-primary" type="button">Save</button>
                 </div>
                 <span id="rendered-modal"></span>
             </div>

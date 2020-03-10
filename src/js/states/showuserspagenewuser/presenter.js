@@ -13,5 +13,20 @@ const stateShowUsersPageNewUserPresenter = async () => {
     waitForElement({ "selector": `${modalRendered}` }, () => {
         eval(`UIkit.modal("${modalEntrypoint}").toggle()`)
     })
+
+    let dataForm = {}
+
+    const saveFormBtn = 'button#save-form'
+    waitForElement({ "selector": saveFormBtn }, () => {
+        // * Button: Save
+        document.querySelector(saveFormBtn).addEventListener('click', () => {
+            document.querySelectorAll('.form-field').forEach((element) => {
+                const key = element.getAttribute("role")
+                const value = element.nodeName == 'select' ? element.value / 1 : element.value
+                dataForm[key] = value
+            })
+            stateShowUsersPageNewUserSave(dataForm)
+        })
+    })
 }
 

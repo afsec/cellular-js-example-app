@@ -11,7 +11,7 @@ const stateShowUsersPageShowModalPresenter = async (domElement) => {
         document.querySelector(modalEntrypoint).innerHTML = view
     })
 
-
+    // ! Bug when button Delete was pressed
     // TODO: Get data from modal fields
     //////////////////////////////////////////////////////////////////
     const nextState = async (roleName) => {
@@ -25,7 +25,7 @@ const stateShowUsersPageShowModalPresenter = async (domElement) => {
             "status": stateShowUsersPageUpdateUser,
             "delete": stateShowUsersPageDeleteUser
         }
-        // TODO: Convert Some field to Number
+
         var element = document.querySelector('#update-field')
 
         const newValue = element.nodeName == 'select' ? element.value / 1 : element.value

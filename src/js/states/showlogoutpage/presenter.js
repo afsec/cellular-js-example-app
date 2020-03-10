@@ -6,7 +6,7 @@ const stateShowLogoutPagePresenter = () => {
     waitForElement({ "selector": "div#page-content" }, () => {
         document.querySelector('div#page-content').innerHTML = view
         setTimeout(() => {
-            stateInitialState()
+            stateShowBareBonePage()
         }, 3000)
     })
 }
