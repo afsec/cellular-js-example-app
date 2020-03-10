@@ -48,7 +48,7 @@ const stateShowUsersPageShowFiltersPresenter = async () => {
         const select = document.querySelector(departmentSelectEntrypoint)
         select.addEventListener('change', () => {
             const selectedValue = select.options[select.selectedIndex].value
-            selectedValue == 'Department' ? selectedFilters["department"] = null : selectedFilters["department"] = selectedValue
+            selectedValue == 'Department (All)' ? selectedFilters["department"] = null : selectedFilters["department"] = selectedValue
             applyFilters(model)
         })
     })
@@ -59,7 +59,7 @@ const stateShowUsersPageShowFiltersPresenter = async () => {
         let select = document.querySelector(permissionSelectEntrypoint)
         select.addEventListener('change', () => {
             const selectedValue = select.options[select.selectedIndex].value
-            selectedValue == 'Permission' ? selectedFilters["permission"] = null : selectedFilters["permission"] = selectedValue
+            selectedValue == 'Permission (All)' ? selectedFilters["permission"] = null : selectedFilters["permission"] = selectedValue
             applyFilters(model)
         })
     })
@@ -70,7 +70,7 @@ const stateShowUsersPageShowFiltersPresenter = async () => {
         const select = document.querySelector(statusSelectEntrypoint)
         select.addEventListener('change', () => {
             const selectedValue = select.options[select.selectedIndex].value
-            selectedValue == 'Status' ? selectedFilters["status"] = null : selectedFilters["status"] = selectedValue
+            selectedValue == 'Status (All)' ? selectedFilters["status"] = null : selectedFilters["status"] = selectedValue
             applyFilters(model)
         })
     })
