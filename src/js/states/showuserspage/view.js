@@ -1,12 +1,12 @@
 const stateShowUsersPageView = async (obj) => {
     debug(`stateShowUsersPageView()`)
-    let page = `
+    const page = `
     <div class="uk-overflow-auto uk-margin-medium-top">
         <h1>Users</h1>
         <button id="new-user" class="uk-button uk-button-default">New</button>
         <hr/>
         <div id="show-filters" class="uk-grid-divider uk-child-width-expand@s" uk-grid></div>
-        <table id="users-table" class="uk-table uk-table-divider uk-table-hover uk-table-small">
+        <table class="uk-table uk-table-divider uk-table-hover uk-table-small">
         <thead>
             <tr>
                 <th>ID</th>
@@ -18,53 +18,11 @@ const stateShowUsersPageView = async (obj) => {
                 <th>Delete</th>
             </tr>
         </thead>
-        <tbody>
-    `
-    const statusMapUkLabel = [
-        "",
-        "uk-label-success",
-        "uk-label-warning",
-        "uk-label-danger",
-    ]
-
-    obj["users"].forEach(row => {
-        page += `
-            <tr>
-                <td role="id">${row["id"]}</td>
-                <td role="name" class="editable-cell">
-                    <span class="data-content">${row["name"]}</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td role="email" class="editable-cell">
-                    <span class="data-content">${row["email"]}</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td role="department" class="editable-cell">
-                    <span class="data-content">${obj["departments"][getArrIdx(obj["departments"],row["department"])]["name"]}</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td role="permission" class="editable-cell">
-                    <span class="data-content">${obj["permissions"][getArrIdx(obj["permissions"],row["permission"])]["name"]}</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td role="status" class="editable-cell">
-                    <span role="active" class="data-content uk-label ${statusMapUkLabel[row["status"]]}">${obj["statuses"][getArrIdx(obj["statuses"],row["status"])]["name"]}</span>
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
-                </td>
-                <td role="delete" class="uk-text-center">
-                    <a class="uk-icon-link uk-icon" uk-icon="icon: trash">
-                </td>
-            </tr>
-        `
-    })
-
-    page += `
-            <tr id="last-row"></tr>
-            </tbody>
-    </table>
-    </div>
-    <!-- Modal -->
-    <div id="users-modal" uk-modal></div>
+        <tbody id="show-users"></tbody>
+        </table>
+        </div>
+        <!-- Modal -->
+        <div id="users-modal" uk-modal></div>
     `
     return page
 }

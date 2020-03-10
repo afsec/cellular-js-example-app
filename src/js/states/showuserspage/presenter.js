@@ -3,34 +3,21 @@ const stateShowUsersPagePresenter = async () => {
     const model = await stateShowUsersPageModel()
     const view = await stateShowUsersPageView(model)
     // AddEvenListener, innerHTML or Call Another State.
-    waitForElement({ "selector": "div#page-content" }, () => {
-        document.querySelector('div#page-content').innerHTML = view
+
+    // * Render Barebone page and calls ShowFilters
+    const pageContentEntrypoint = 'div#page-content'
+    waitForElement({ "selector": pageContentEntrypoint }, () => {
+        document.querySelector(pageContentEntrypoint).innerHTML = view
+        // Run another state with data travel (`model`)
         stateShowUsersPageShowFilters()
     })
 
-    waitForElement({ "selector": "tr#last-row" }, () => {
-
-        // * Button: New
-        document.querySelector('button#new-user').addEventListener('click', () => {
+    const NewUserBtnEntrypoint = 'button#new-user'
+    waitForElement({ "selector": NewUserBtnEntrypoint }, () => {
+        // * Render Button: New
+        document.querySelector(NewUserBtnEntrypoint).addEventListener('click', () => {
             stateShowUsersPageNewUser()
         })
-
-        // * Icon: Edit
-        document.querySelectorAll('td.editable-cell').forEach((tdEditable) => {
-            tdEditable.childNodes[3].addEventListener('click', () => {
-                stateShowUsersPageShowModal(tdEditable)
-            })
-        })
-
-        // * Icon: Delete
-        document.querySelectorAll('td[role="delete"]').forEach((tdDelete) => {
-            tdDelete.childNodes[1].addEventListener('click', () => {
-                stateShowUsersPageShowModal(tdDelete)
-            })
-        })
-
     })
 
-
 }
-

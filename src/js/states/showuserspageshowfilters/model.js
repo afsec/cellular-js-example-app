@@ -1,5 +1,8 @@
 const stateShowUsersPageShowFiltersModel = async () => {
     debug(`stateShowUsersPageShowFiltersModel()`)
+    const users = await fetch(`${BASE_API_ADDRESS}/users`)
+        .then(response => response.json())
+        .then(data => data)
 
     const departments = await fetch(`${BASE_API_ADDRESS}/departments`)
         .then(response => response.json())
@@ -14,6 +17,7 @@ const stateShowUsersPageShowFiltersModel = async () => {
         .then(data => data)
 
     const obj = {
+        "users": users,
         "department": departments,
         "permission": permissions,
         "status": statuses

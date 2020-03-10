@@ -3,8 +3,10 @@ const stateShowUsersPageShowFiltersPresenter = async () => {
     const model = await stateShowUsersPageShowFiltersModel()
     const view = await stateShowUsersPageShowFiltersView(model)
     // AddEvenListener, innerHTML or Call Another State.
-    waitForElement({ "selector": "div#show-filters" }, () => {
-        document.querySelector('div#show-filters').innerHTML = view
+    const elementEntrypoint = 'div#show-filters'
+    waitForElement({ "selector": elementEntrypoint }, () => {
+        document.querySelector(elementEntrypoint).innerHTML = view
     })
+    stateShowUsersPageContent(model)
 }
 
