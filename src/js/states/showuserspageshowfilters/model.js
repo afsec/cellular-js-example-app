@@ -14,9 +14,9 @@ const stateShowUsersPageShowFiltersModel = async () => {
         .then(data => data)
 
     const obj = {
-        "departments": departments,
-        "permissions": permissions,
-        "statuses": statuses
+        "department": departments,
+        "permission": permissions,
+        "status": statuses
     }
 
     return obj

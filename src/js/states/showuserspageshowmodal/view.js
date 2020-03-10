@@ -1,5 +1,7 @@
 const stateShowUsersPageShowModalView = async (obj) => {
     debug(`stateShowUsersPageShowModalView()`)
+    debug('obj')
+    debug(obj)
     const modalText = () => {
         debug('modalText()')
         const roleName = obj["role"]
@@ -18,21 +20,30 @@ const stateShowUsersPageShowModalView = async (obj) => {
                 </p>
                 <span id="rendered-modal"></span>
             </div>
-    `
+        `
         return modal
     }
 
-    const modalSelect = () => {
+    const modalSelect = async () => {
         debug('modalSelect()')
         const roleName = obj["role"]
         const contentData = obj["content"][roleName] / 1
 
-        const modal = `
+        let modal = `
             <div class="uk-modal-dialog uk-modal-body">
                 <h2 class="uk-modal-title">Update</h2>
                 <div>
                     <label class="uk-form-label">${roleName}: </label>
-                    <input class="uk-input" type="text" value="${contentData}">
+                    <div class="uk-form-controls">
+                        <select class="uk-select uk-form-width-large">
+        `
+        await obj[`${roleName}`].forEach(row => {
+            modal += `<option ${row["id"] === contentData ? 'selected="selected"' : ''}>${row["name"]}</option>`
+        })
+
+        modal += `
+                        </select>
+                    </div>
                 </div>
                 <p class="uk-text-right">
                     <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
@@ -40,7 +51,7 @@ const stateShowUsersPageShowModalView = async (obj) => {
                 </p>
                 <span id="rendered-modal"></span>
             </div>
-    `
+        `
         return modal
     }
 

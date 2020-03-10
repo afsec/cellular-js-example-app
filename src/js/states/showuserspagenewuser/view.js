@@ -14,21 +14,21 @@ const stateShowUsersPageNewUserView = async (obj) => {
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-h-text">Name</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input uk-form-width-large" id="form-h-text" type="text" placeholder="First Last">
+                                <input class="uk-input uk-form-width-large" type="text" placeholder="First Last">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-h-text">E-mail</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input uk-form-width-large" id="form-h-text" type="text" placeholder="email@example.net">
+                                <input class="uk-input uk-form-width-large" type="text" placeholder="email@example.net">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-h-select">Department</label>
                             <div class="uk-form-controls">
-                                <select class="uk-select uk-form-width-large" id="form-h-select">
+                                <select class="uk-select uk-form-width-large">
                                 <option></option>
     `
     await obj["departments"].forEach(row => {
@@ -43,7 +43,7 @@ const stateShowUsersPageNewUserView = async (obj) => {
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-h-select">Permission</label>
                             <div class="uk-form-controls">
-                                <select class="uk-select uk-form-width-large" id="form-h-select">
+                                <select class="uk-select uk-form-width-large">
                                     <option></option>
     `
     await obj["permissions"].forEach(row => {
