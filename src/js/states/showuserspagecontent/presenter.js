@@ -12,7 +12,6 @@ const stateShowUsersPageContentPresenter = async (obj) => {
 
     waitForElement({ "selector": "tr#last-row" }, () => {
 
-        // users-tbody
         // * Icon: Edit
         document.querySelectorAll('td.editable-cell').forEach((tdEditable) => {
             tdEditable.childNodes[3].addEventListener('click', () => {

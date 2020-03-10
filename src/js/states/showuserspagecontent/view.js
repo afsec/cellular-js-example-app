@@ -1,7 +1,5 @@
 const stateShowUsersPageContentView = async (obj) => {
     debug(`stateShowUsersPageContentView()`)
-    debug('obj')
-    debug(obj)
     let page = ''
 
     const statusMapUkLabel = [
@@ -12,8 +10,6 @@ const stateShowUsersPageContentView = async (obj) => {
     ]
 
     obj["users"].forEach(row => {
-        debug('row')
-        debug(row)
         page += `
             <tr>
                 <td role="id">${row["id"]}</td>

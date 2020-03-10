@@ -4,7 +4,7 @@ const stateShowUsersPageShowFiltersView = async (obj) => {
     let page = `
     <div class="uk-first-column">
         <div class="uk-panel">
-            <select class="uk-select">
+            <select id="filter-by-department" class="uk-select">
                 <option>Department</option>
     `
     // TODO: To create a state called `ShowUsersPageShowFilters`
@@ -18,7 +18,7 @@ const stateShowUsersPageShowFiltersView = async (obj) => {
     </div>
     <div>
         <div class="uk-panel">
-            <select class="uk-select">
+            <select id="filter-by-permission" class="uk-select">
                 <option>Permission</option>
     `
     await obj["permission"].forEach(row => {
@@ -31,7 +31,7 @@ const stateShowUsersPageShowFiltersView = async (obj) => {
     </div>
     <div>
         <div class="uk-panel">
-            <select class="uk-select">
+            <select id="filter-by-status" class="uk-select">
                 <option>Status</option>
     `
 
