@@ -1,7 +1,7 @@
-const stateShowUsersPageShowModal = (event) => {
+const stateShowUsersPageShowModal = (domElement) => {
     // DESC: ...
     debug(`stateShowUsersPageShowModal()`)
     const currentState = "ShowUsersPageShowModal"
-    stateShowUsersPageShowModalPresenter(event)
+    stateShowUsersPageShowModalPresenter(domElement)
 }
 

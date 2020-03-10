@@ -16,7 +16,7 @@ const stateShowUsersPageShowModalView = async (obj) => {
                 </div>
                 <p class="uk-text-right">
                     <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                    <button class="uk-button uk-button-primary" type="button">Save</button>
+                    <button id="modal-ok-btn" class="uk-button uk-button-primary" type="button">Save</button>
                 </p>
                 <span id="rendered-modal"></span>
             </div>
@@ -47,7 +47,7 @@ const stateShowUsersPageShowModalView = async (obj) => {
                 </div>
                 <p class="uk-text-right">
                     <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                    <button class="uk-button uk-button-primary" type="button">Save</button>
+                    <button id="modal-ok-btn" class="uk-button uk-button-primary" type="button">Save</button>
                 </p>
                 <span id="rendered-modal"></span>
             </div>
@@ -57,16 +57,18 @@ const stateShowUsersPageShowModalView = async (obj) => {
 
     const modalDeleteConfirmation = () => {
         debug('modalDeleteConfirmation()')
-        const contentData = obj["content"]["name"]
+        const userName = obj["content"]["name"]
+        const userId = obj["content"]["id"]
 
         const modal = `
             <div class="uk-modal-dialog">
                     <div class="uk-modal-body">
-                        Confirm user: <strong>${contentData}</strong> deletion?
+                        Confirm user: <strong>${userName}</strong> deletion?
+                        <input id="user-id" type="hidden" value="${userId}">
                     </div>
                         <div class="uk-modal-footer uk-text-right">
                         <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                        <button class="uk-button uk-button-primary" autofocus="">Ok</button>
+                        <button id="modal-ok-btn" class="uk-button uk-button-primary" autofocus="">Ok</button>
                     </div>
                     <span id="rendered-modal"></span>
             </div>

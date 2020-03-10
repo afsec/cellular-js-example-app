@@ -15,7 +15,7 @@ DEBUG_FILE="${TMP_DIR}/main-compiler.js"
 TO_DOT_FILE="${TMP_DIR}/main-debug.js"
 
 LANG_OUT="STABLE"
-#LANG_OUT="ECMASCRIPT_2018"
+# LANG_OUT="ECMASCRIPT_2018"
 
 COMPILER="$HOME/bin/closure-compiler.jar"
 
@@ -139,7 +139,7 @@ copy_assets() {
     cp -v ${SRC_DIR}/js/uikit.min.js $DIST_FRONT_DIR/js/
     cp -v ${SRC_DIR}/js/uikit-icons.min.js $DIST_FRONT_DIR/js/
 
-    # cp -v ${SRC_DIR}/api/* $DIST_FRONT_DIR/api/
+    cp -v ${SRC_DIR}/api/db.json $DIST_FRONT_DIR/api/
 
     #cp -v ${SRC_DIR}/js/worker.js $DIST_FRONT_DIR/js/
     # cp -v ${TMP_DIR}/worker.js $DIST_FRONT_DIR/js/worker.js

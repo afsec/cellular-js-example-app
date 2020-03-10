@@ -1,8 +1,8 @@
-const stateShowUsersPageShowModalModel = async (event) => {
+const stateShowUsersPageShowModalModel = async (domElement) => {
     debug(`stateShowUsersPageShowModalModel()`)
 
-    const rowId = event.parentNode.childNodes[1].innerText
-    const rowRole = event.getAttribute("role")
+    const rowId = domElement.parentNode.childNodes[1].innerText
+    const rowRole = domElement.getAttribute("role")
 
     const user = await fetch(`${BASE_API_ADDRESS}/users/${rowId}`)
         .then(response => response.json())
