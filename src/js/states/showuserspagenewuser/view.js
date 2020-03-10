@@ -12,21 +12,21 @@ const stateShowUsersPageNewUserView = async (obj) => {
                 <div class="uk-modal-body uk-overflow-auto" uk-overflow-auto="" style="min-height: 150px; max-height: 707px;">
                     <form class="uk-form-horizontal">
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-h-text">Name:</label>
+                            <label class="uk-form-label">Name:</label>
                             <div class="uk-form-controls">
                                 <input class="uk-input uk-form-width-large" type="text" placeholder="First Last">
                             </div>
                         </div>
 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-h-text">E-mail:</label>
+                            <label class="uk-form-label">E-mail:</label>
                             <div class="uk-form-controls">
                                 <input class="uk-input uk-form-width-large" type="text" placeholder="email@example.net">
                             </div>
                         </div>
 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-h-select">Department:</label>
+                            <label class="uk-form-label">Department:</label>
                             <div class="uk-form-controls">
                                 <select class="uk-select uk-form-width-large">
                                 <option></option>
@@ -41,7 +41,7 @@ const stateShowUsersPageNewUserView = async (obj) => {
                         </div>
 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-h-select">Permission:</label>
+                            <label class="uk-form-label">Permission:</label>
                             <div class="uk-form-controls">
                                 <select class="uk-select uk-form-width-large">
                                     <option></option>
