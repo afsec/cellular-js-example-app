@@ -12,7 +12,7 @@ const stateShowUsersPageContentView = async (obj) => {
     obj["users"].forEach(row => {
         page += `
             <tr>
-                <td role="id">${row["id"]}</td>
+                <td role="id">${row["id"]/1}</td>
                 <td role="name" class="editable-cell">
                     <span class="data-content">${row["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
@@ -22,15 +22,15 @@ const stateShowUsersPageContentView = async (obj) => {
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="department" class="editable-cell">
-                    <span class="data-content">${obj["department"][getArrIdx(obj["department"],row["department"])]["name"]}</span>
+                    <span class="data-content">${obj["department"][getArrIdx(obj["department"],row["department"]/1)]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="permission" class="editable-cell">
-                    <span class="data-content">${obj["permission"][getArrIdx(obj["permission"],row["permission"])]["name"]}</span>
+                    <span class="data-content">${obj["permission"][getArrIdx(obj["permission"],row["permission"]/1)]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="status" class="editable-cell">
-                    <span role="active" class="data-content uk-label ${statusMapUkLabel[row["status"]]}">${obj["status"][getArrIdx(obj["status"],row["status"])]["name"]}</span>
+                    <span role="active" class="data-content uk-label ${statusMapUkLabel[row["status"]]}">${obj["status"][getArrIdx(obj["status"],row["status"]/1)]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="delete" class="uk-text-center">

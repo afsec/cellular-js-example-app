@@ -13,21 +13,23 @@ const stateShowUsersPageShowModalPresenter = async (domElement) => {
 
 
     // TODO: Get data from modal fields
-    //input id="user-id"
-    // TODO: Rename `domElement` variable to `domElement`
     //////////////////////////////////////////////////////////////////
-    // TODO: addEventListener according with recpective `role`
-    const nextState = (roleName) => {
+    const nextState = async (roleName) => {
         debug('nextState()')
 
         const roleToFunc = {
-            // "name": modalText,
-            // "email": modalText,
-            // "department": modalSelect,
-            // "permission": modalSelect,
-            // "status": modalSelect,
+            "name": stateShowUsersPageUpdateUser,
+            "email": stateShowUsersPageUpdateUser,
+            "department": stateShowUsersPageUpdateUser,
+            "permission": stateShowUsersPageUpdateUser,
+            "status": stateShowUsersPageUpdateUser,
             "delete": stateShowUsersPageDeleteUser
         }
+        // TODO: Convert Some field to Number
+        var element = document.querySelector('#update-field')
+
+        const newValue = element.nodeName == 'select' ? element.value / 1 : element.value
+        model["updateValue"] = newValue
 
         // Go to  Next State to interact with Serve-side (Backend)
         roleToFunc[roleName](model)

@@ -1,7 +1,6 @@
 const stateShowUsersPageShowModalView = async (obj) => {
     debug(`stateShowUsersPageShowModalView()`)
-    debug('obj')
-    debug(obj)
+
     const modalText = () => {
         debug('modalText()')
         const roleName = obj["role"]
@@ -12,7 +11,7 @@ const stateShowUsersPageShowModalView = async (obj) => {
                 <h2 class="uk-modal-title">Update</h2>
                 <div>
                     <label class="uk-form-label">${roleName}: </label>
-                    <input class="uk-input" type="text" value="${contentData}">
+                    <input id="update-field" role="${roleName}" class="uk-input" type="text" value="${contentData}">
                 </div>
                 <p class="uk-text-right">
                     <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
@@ -35,10 +34,10 @@ const stateShowUsersPageShowModalView = async (obj) => {
                 <div>
                     <label class="uk-form-label">${roleName}: </label>
                     <div class="uk-form-controls">
-                        <select class="uk-select uk-form-width-large">
+                        <select id="update-field" role="${roleName}" class="uk-select uk-form-width-large">
         `
         await obj[`${roleName}`].forEach(row => {
-            modal += `<option ${row["id"] === contentData ? 'selected="selected"' : ''}>${row["name"]}</option>`
+            modal += `<option value="${row["id"]}" ${row["id"] === contentData ? 'selected="selected"' : ''}>${row["name"]}</option>`
         })
 
         modal += `
