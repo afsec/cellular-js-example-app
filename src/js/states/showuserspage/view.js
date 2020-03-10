@@ -51,7 +51,7 @@ const stateShowUsersPageView = async (obj) => {
                     <span role="active" class="data-content uk-label ${statusMapUkLabel[row["status"]]}">${obj["statuses"][getArrIdx(obj["statuses"],row["status"])]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
-                <td role="delete">
+                <td role="delete" class="uk-text-center">
                     <a class="uk-icon-link uk-icon" uk-icon="icon: trash">
                 </td>
             </tr>
