@@ -5,7 +5,15 @@ const stateShowUsersPageUpdateUserModel = async (data) => {
     debug('-data-')
     const fieldName = data["role"]
     const value = data["updateValue"]
-    const bodyJson = `{"${fieldName}": "${value}"}`
+    const numericFields = [
+        "department",
+        "permission",
+        "status",
+    ]
+    let bodyObj = JSON.parse(`{"${fieldName}": null }`)
+    bodyObj[`${fieldName}`] = numericFields.findIndex(item => item === fieldName) > -1 ? value/1 : value
+
+    const bodyJson = JSON.stringify(bodyObj)
     const userId = data["content"]["id"]
 
     const result = await fetch(`${BASE_API_ADDRESS}/users/${userId}`,
