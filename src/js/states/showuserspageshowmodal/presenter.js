@@ -26,10 +26,11 @@ const stateShowUsersPageShowModalPresenter = async (domElement) => {
             "delete": stateShowUsersPageDeleteUser
         }
 
-        var element = document.querySelector('#update-field')
-
-        const newValue = element.nodeName == 'select' ? element.value / 1 : element.value
-        model["updateValue"] = newValue
+        if (roleToFunc[roleName](model) != "delete") {
+            var element = document.querySelector('#update-field')
+            const newValue = element.nodeName == 'select' ? element.value / 1 : element.value
+            model["updateValue"] = newValue
+        }
 
         // Go to  Next State to interact with Serve-side (Backend)
         roleToFunc[roleName](model)
