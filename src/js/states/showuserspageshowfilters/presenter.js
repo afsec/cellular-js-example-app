@@ -3,7 +3,7 @@ const stateShowUsersPageShowFiltersPresenter = async () => {
     const model = await stateShowUsersPageShowFiltersModel()
     const view = await stateShowUsersPageShowFiltersView(model)
     // AddEvenListener, innerHTML or Call Another State.
-    var selectedFilters = {
+    let selectedFilters = {
         "department": null,
         "permission": null,
         "status": null

@@ -8,8 +8,8 @@ const waitForElement = (props, callBack) => {
     debug(props)
     const maxTries = 50
     const selector = props["selector"]
-    var timeOut = null
-    var tries = null
+    let timeOut = null
+    let tries = null
 
     if (typeof (props["timeOut"]) === 'undefined') {
         // Default timeOut: 100 miliseconds
