@@ -158,6 +158,11 @@ generate_callgraph() {
     dot ${TMP_DIR}/callgraph.dot -Tsvg -o ${TMP_DIR}/callgraph.svg
 }
 
+start_json_server() {
+    ss -antup | awk '/LIST.+8001/ {print}' | grep LIST >/dev/null 2>&1 ; CODE=$?
+    [ ${CODE} -ne 0 ] && (printf "\tStarting JSON Server (PORT: 8001)\n" ; ./json-server-docker-run.sh ; sleep 2)
+}
+
 run_server() {
     printf "\tRunning $FUNCNAME...\n"
     cd $PROD_DIR
@@ -175,6 +180,7 @@ main() {
     merge_to_dot
     generate_callgraph
     # compile_login
+    start_json_server
     run_server
 }
 
