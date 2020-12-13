@@ -1,5 +1,5 @@
-const stateShowAdminPanelModel = () => {
+const stateShowAdminPanelModel = async (message) => {
     debug(`stateShowAdminPanelModel()`)
-    return {}
+    return message
 }
 

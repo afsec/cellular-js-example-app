@@ -1,4 +1,4 @@
-const stateShowLogoutPageView = (obj) => {
+const stateShowLogoutPageView = async (modelResult) => {
     debug(`stateShowLogoutPageView()`)
     return `
     <div class="uk-overflow-auto uk-margin-medium-top uk-text-center@m" tabindex="0">

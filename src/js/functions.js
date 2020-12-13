@@ -1,15 +1,32 @@
-//functions.js
+// functions.js
 
-const debug = message => ((typeof(DEBUG) !== 'undefined') && (DEBUG === true)) ? (typeof (message) !== 'undefined') ? console.log(message) : false : false
-
+const debug = (message, level = "INFO") => {
+    if ((typeof (DEBUG) !== 'undefined') && (DEBUG === true)) {
+        if (typeof (message) !== 'undefined') {
+            switch (level) {
+                case "INFO":
+                    console.log("CELLULAR_JS - INFO: ", message)
+                    break
+                case "WARN":
+                    console.warn("CELLULAR_JS - WARNING: ", message)
+                    break
+                case "ERROR":
+                    console.error("CELLULAR_JS - ERROR: ", message)
+                    break
+                default:
+                    console.error(`CELLULAR_JS - debug() function Error: debug(message,"${level}") "${level}" is invalid level. Try "INFO", "WARN" or "ERROR".`)
+            }
+        }
+    }
+}
 
 const waitForElement = (props, callBack) => {
     debug('waitForElement()')
     debug(props)
     const maxTries = 50
     const selector = props["selector"]
-    let timeOut = null
-    let tries = null
+    var timeOut = null
+    var tries = null
 
     if (typeof (props["timeOut"]) === 'undefined') {
         // Default timeOut: 100 miliseconds
@@ -26,7 +43,7 @@ const waitForElement = (props, callBack) => {
             tries = props["tries"]
         } else {
             tries = 0
-            debug('WFE: INFO -> undefined tries')
+            debug('WFE: ERROR -> undefined tries')
         }
 
         tries += 1
@@ -59,18 +76,41 @@ const getArrIdx = (arr, id) => {
                 if (idx > -1) {
                     return idx
                 } else {
-                    debug('getArrIdx(): ERROR -> Not Found')
+                    debug(`getArrIdx(): ERROR -> ID (${id}) not Found`)
+                    return false
                 }
             } else {
                 debug('getArrIdx(): ERROR -> Array empty')
+                return false
             }
         } else {
             debug('getArrIdx(): ERROR -> Type mismatch: id')
+            return false
         }
     } else {
         debug('getArrIdx(): ERROR -> Type mismatch: arr')
+        return false
     }
 }
 
 
 
+const routeFromUrl = () => {
+    if (window.location.href.indexOf('#') > -1) {
+        const routeDescriptor = window.location.href.split("#")[1]
+        if (routeDescriptor.indexOf("/") > -1) {
+            const routeFromUrl = "/" + routeDescriptor.split("/")[1]
+            return routeFromUrl
+        } else {
+            return "/"
+        }
+    } else {
+        return "/"
+    }
+}
+
+
+const pushUrl = (href) => {
+    history.pushState({}, '', href)
+    window.dispatchEvent(new Event('popstate'))
+}

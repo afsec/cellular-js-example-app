@@ -1,4 +1,4 @@
-const stateShowConfigurationPageView = (obj) => {
+const stateShowConfigurationPageView = async (modelResult) => {
     debug(`stateShowConfigurationPageView()`)
     return `
     <div class="uk-overflow-auto uk-margin-medium-top">

@@ -1,4 +1,4 @@
-const stateShowBareBonePageView = (obj) => {
+const stateShowBareBonePageView = async (modelResult) => {
     debug(`stateShowBareBonePageView()`)
     return `
     <nav id="panel-admin" class="uk-navbar-container"></nav>

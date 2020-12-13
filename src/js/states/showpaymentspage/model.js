@@ -1,5 +1,5 @@
-const stateShowPaymentsPageModel = () => {
+const stateShowPaymentsPageModel = async (message) => {
     debug(`stateShowPaymentsPageModel()`)
-    return {}
+    return message
 }
 

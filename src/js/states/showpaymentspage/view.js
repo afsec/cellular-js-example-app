@@ -1,4 +1,4 @@
-const stateShowPaymentsPageView = (obj) => {
+const stateShowPaymentsPageView = async (modelResult) => {
     debug(`stateShowPaymentsPageView()`)
     return `
     <div class="uk-overflow-auto uk-margin-medium-top">

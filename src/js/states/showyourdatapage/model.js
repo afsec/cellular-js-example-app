@@ -1,5 +1,5 @@
-const stateShowYourDataPageModel = () => {
+const stateShowYourDataPageModel = async (message) => {
     debug(`stateShowYourDataPageModel()`)
-    return {}
+    return message
 }
 

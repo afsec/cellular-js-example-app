@@ -1,4 +1,4 @@
-const stateShowYourDataPageView = (obj) => {
+const stateShowYourDataPageView = async (modelResult) => {
     debug(`stateShowYourDataPageView()`)
     return `
     <div class="uk-overflow-auto uk-margin-medium-top">

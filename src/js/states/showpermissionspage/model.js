@@ -1,5 +1,5 @@
-const stateShowPermissionsPageModel = () => {
+const stateShowPermissionsPageModel = async (message) => {
     debug(`stateShowPermissionsPageModel()`)
-    return {}
+    return message
 }
 

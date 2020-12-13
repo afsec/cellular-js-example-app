@@ -1,7 +1,7 @@
-const stateShowPermissionsPagePresenter = () => {
+const stateShowPermissionsPagePresenter = async (message) => {
     debug(`stateShowPermissionsPagePresenter()`)
-    const model = stateShowPermissionsPageModel()
-    const view = stateShowPermissionsPageView(model)
+    const model = await stateShowPermissionsPageModel(message)
+    const view = await stateShowPermissionsPageView(model)
     // AddEvenListener, innerHTML or Call Another State.
     waitForElement({ "selector": "div#page-content" }, () => {
         document.querySelector('div#page-content').innerHTML = view

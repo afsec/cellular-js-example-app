@@ -1,4 +1,4 @@
-const stateShowAdminPanelView = (obj) => {
+const stateShowAdminPanelView = async (modelResult) => {
     debug(`stateShowAdminPanelView()`)
     return `
     <div class="uk-container">
@@ -6,7 +6,8 @@ const stateShowAdminPanelView = (obj) => {
             <div class="uk-navbar-left">
                 <a class="uk-navbar-item uk-logo" href="#">Admin Panel</a>
                 <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a id="menu-item-users">Users</a></li>
+                <!-- <li class="uk-active"><a id="menu-item-users">Users</a></li> -->
+                    <li><a id="menu-item-users">Users</a></li>
                     <li><a id="menu-item-departments">Departments</a></li>
                     <li><a id="menu-item-permissions">permissions</a></li>
                     <li><a>|</a></li>

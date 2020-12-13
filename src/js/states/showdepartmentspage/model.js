@@ -1,5 +1,5 @@
-const stateShowDepartmentsPageModel = () => {
+const stateShowDepartmentsPageModel = async (message) => {
     debug(`stateShowDepartmentsPageModel()`)
-    return {}
+    return message
 }
 

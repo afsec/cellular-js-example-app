@@ -1,6 +1,6 @@
-const stateShowDepartmentsPageView = (obj) => {
+const stateShowDepartmentsPageView = async (modelResult) => {
     debug(`stateShowDepartmentsPageView()`)
-    const page = `
+    return `
     <div class="uk-overflow-auto uk-margin-medium-top">
         <h1>Departments</h1>
         <button class="uk-button uk-button-default">New</button>
@@ -48,6 +48,5 @@ const stateShowDepartmentsPageView = (obj) => {
         </table>
     </div>
     `
-    return page
 }
 

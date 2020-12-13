@@ -40,5 +40,5 @@ It's Users CRUD with some other CRUD references.
 ```sh
 git clone --depth=1 https://github.com/afsec/cellular-js-example-app
 cd cellular-js-example-app
-./build.sh
+make
 ```

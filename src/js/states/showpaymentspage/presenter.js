@@ -1,7 +1,7 @@
-const stateShowPaymentsPagePresenter = () => {
+const stateShowPaymentsPagePresenter = async (message) => {
     debug(`stateShowPaymentsPagePresenter()`)
-    const model = stateShowPaymentsPageModel()
-    const view = stateShowPaymentsPageView(model)
+    const model = await stateShowPaymentsPageModel(message)
+    const view = await stateShowPaymentsPageView(model)
     // AddEvenListener, innerHTML or Call Another State.
     waitForElement({ "selector": "div#page-content" }, () => {
         document.querySelector('div#page-content').innerHTML = view

@@ -1,5 +1,5 @@
-const stateShowLogoutPageModel = () => {
+const stateShowLogoutPageModel = async (message) => {
     debug(`stateShowLogoutPageModel()`)
-    return {}
+    return message
 }
 
