@@ -1,17 +1,17 @@
-const stateShowYourDataPage = (sender, message) => {
+const stateShowDashboardsPage = (sender, message) => {
     // DESC: ...
-    debug(`stateShowYourDataPage()`)
-    const currentState = "ShowYourDataPage"
+    debug(`stateShowDashboardsPage()`)
+    const currentState = "ShowDashboardsPage"
 
     // ACL: Insert HERE all allowed senders.
     const AccessControlList = [
-        "ShowProfileMenu"
+        "Dispatcher"
     ]
 
     const errorMessage = `CELLULAR_JS - ACL Error: ${sender} cannot send message to ${currentState}. Try insert "${sender}" into ${currentState} AccessControlList at "${currentState.toLowerCase()}/state.js"`
     const isAllowedSender = (sender) => (AccessControlList.indexOf(sender) > -1) ? true : false
     if (isAllowedSender(sender)) {
-        stateShowYourDataPagePresenter(message)
+        stateShowDashboardsPagePresenter(message)
     } else {
         debug(errorMessage, "ERROR")
     }
