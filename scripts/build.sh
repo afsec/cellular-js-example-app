@@ -174,7 +174,7 @@ generate_callgraph() {
 
 start_json_server() {
     ss -antup | mawk '/LIST.+8001/ {print}' | grep LIST >/dev/null 2>&1 ; CODE=$?
-    [ ${CODE} -ne 0 ] && (printf "\tStarting JSON Server (PORT: 8001)\n" ; ./json-server-docker-run.sh ; sleep 2)
+    [ ${CODE} -ne 0 ] && (printf "\tStarting JSON Server (PORT: 8001)\n" ; ./scripts/json-server-docker-run.sh ; sleep 2)
 }
 
 run_server() {
