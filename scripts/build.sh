@@ -149,7 +149,8 @@ copy_assets() {
     cp -v ${SRC_DIR}/js/uikit.min.js $DIST_FRONT_DIR/js/
     cp -v ${SRC_DIR}/js/uikit-icons.min.js $DIST_FRONT_DIR/js/
 
-    cp -v ${SRC_DIR}/api/db.json $DIST_FRONT_DIR/api/
+    #cp -v ${SRC_DIR}/api/db.json $DIST_FRONT_DIR/api/
+    
 
     #cp -v ${SRC_DIR}/js/worker.js $DIST_FRONT_DIR/js/
     # cp -v ${TMP_DIR}/worker.js $DIST_FRONT_DIR/js/worker.js
@@ -172,9 +173,9 @@ generate_callgraph() {
     dot ${TMP_DIR}/callgraph.dot -Tsvg -o ${TMP_DIR}/callgraph.svg
 }
 
-start_json_server() {
+start_api_server() {
     ss -antup | mawk '/LIST.+8001/ {print}' | grep LIST >/dev/null 2>&1 ; CODE=$?
-    [ ${CODE} -ne 0 ] && (printf "\tStarting JSON Server (PORT: 8001)\n" ; ./scripts/json-server-docker-run.sh ; sleep 2)
+    [ ${CODE} -ne 0 ] && (printf "\tStarting API Server (PORT: 8001)\n" ; pushd ./api/ ; (LOG_LEVEL=DEBUG PORT=8001 nohup ./tide-crud-users &) ; sleep 2)
 }
 
 run_server() {
@@ -197,7 +198,7 @@ main() {
     merge_to_dot
     generate_callgraph
     # compile_login
-    start_json_server
+    start_api_server
     run_server
 }
 
