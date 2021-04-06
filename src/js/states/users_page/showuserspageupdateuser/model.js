@@ -7,23 +7,25 @@ const stateShowUsersPageUpdateUserModel = async (data) => {
         "permission",
         "status",
     ]
-    let bodyObj = JSON.parse(`{"${fieldName}": null }`)
+    const userId = data["content"]["id"]
+
+    let bodyObj = JSON.parse(`{ "id": ${userId}, "${fieldName}": null }`)
+    
     bodyObj[`${fieldName}`] = numericFields.findIndex(item => item === fieldName) > -1 ? value/1 : value
 
     const bodyJson = JSON.stringify(bodyObj)
-    const userId = data["content"]["id"]
-
-    const result = await fetch(`${BASE_API_ADDRESS}/users/${userId}`,
+    
+    const result = await fetch(`${BASE_API_ADDRESS}/update_user`,
         {
-            "method": "PATCH",
+            "method": "post",
             "headers": {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             },
             "body": bodyJson
         })
-        .then(() => JSON.parse('{ "deleted": true }'))
-        .catch(() => JSON.parse('{ "deleted": false }'))
+        .then(() => JSON.parse('{ "updated": true }'))
+        .catch(() => JSON.parse('{ "updated": false }'))
 
     return result
 }

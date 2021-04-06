@@ -4,7 +4,7 @@ const stateShowUsersPageNewUserSavePresenter = async (message) => {
     const view = await stateShowUsersPageNewUserSaveView(model)
     // AddEvenListener, innerHTML or Call Another State.
 
-    if (model["updated"]) {
+    if (model["created"]) {
         const modalEntrypoint = 'div#users-modal'
         waitForElement({ "selector": `${modalEntrypoint}` }, () => {
             eval(`UIkit.modal("${modalEntrypoint}").toggle()`);

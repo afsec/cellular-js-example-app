@@ -3,7 +3,7 @@ const stateShowUsersPageUpdateUserPresenter = async (message) => {
     const model = await stateShowUsersPageUpdateUserModel(message)
     const view = await stateShowUsersPageUpdateUserView(model)
     // AddEvenListener, innerHTML or Call Another State.
-    if (model["deleted"]) {
+    if (model["updated"]) {
         const modalEntrypoint = 'div#users-modal'
         waitForElement({ "selector": `${modalEntrypoint}` }, () => {
             eval(`UIkit.modal("${modalEntrypoint}").toggle()`);

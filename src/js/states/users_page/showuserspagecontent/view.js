@@ -9,20 +9,7 @@ const stateShowUsersPageContentView = async (modelResult) => {
         "uk-label-danger",
     ]
 
-    debug(modelResult, "WARN");
-
     modelResult["users"].forEach(row => {
-        debug(row, "ERROR");
-        
-        const department = modelResult["department"][getArrIdx(modelResult["department"], row["department"] / 1)]["name"]
-        debug(department, "WARN");
-        
-        const permission = modelResult["permission"][getArrIdx(modelResult["permission"], row["permission"] / 1)]["name"]
-        debug(permission, "WARN");
-        
-        const status = modelResult["status"][getArrIdx(modelResult["status"], row["status"] / 1)]["name"]
-        debug(status, "WARN");
-
         page += `
             <tr>
                 <td role="id">${row["id"] / 1}</td>
