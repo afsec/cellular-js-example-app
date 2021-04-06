@@ -9,10 +9,23 @@ const stateShowUsersPageContentView = async (modelResult) => {
         "uk-label-danger",
     ]
 
+    debug(modelResult, "WARN");
+
     modelResult["users"].forEach(row => {
+        debug(row, "ERROR");
+        
+        const department = modelResult["department"][getArrIdx(modelResult["department"], row["department"] / 1)]["name"]
+        debug(department, "WARN");
+        
+        const permission = modelResult["permission"][getArrIdx(modelResult["permission"], row["permission"] / 1)]["name"]
+        debug(permission, "WARN");
+        
+        const status = modelResult["status"][getArrIdx(modelResult["status"], row["status"] / 1)]["name"]
+        debug(status, "WARN");
+
         page += `
             <tr>
-                <td role="id">${row["id"]/1}</td>
+                <td role="id">${row["id"] / 1}</td>
                 <td role="name" class="editable-cell">
                     <span class="data-content">${row["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
@@ -22,15 +35,15 @@ const stateShowUsersPageContentView = async (modelResult) => {
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="department" class="editable-cell">
-                    <span class="data-content">${modelResult["department"][getArrIdx(modelResult["department"],row["department"]/1)]["name"]}</span>
+                    <span class="data-content">${modelResult["department"][getArrIdx(modelResult["department"], row["department"] / 1)]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="permission" class="editable-cell">
-                    <span class="data-content">${modelResult["permission"][getArrIdx(modelResult["permission"],row["permission"]/1)]["name"]}</span>
+                    <span class="data-content">${modelResult["permission"][getArrIdx(modelResult["permission"], row["permission"] / 1)]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="status" class="editable-cell">
-                    <span role="active" class="data-content uk-label ${statusMapUkLabel[row["status"]]}">${modelResult["status"][getArrIdx(modelResult["status"],row["status"]/1)]["name"]}</span>
+                    <span role="active" class="data-content uk-label ${statusMapUkLabel[row["status"]]}">${modelResult["status"][getArrIdx(modelResult["status"], row["status"] / 1)]["name"]}</span>
                     <a class="uk-icon-link uk-icon" uk-icon="icon: pencil">
                 </td>
                 <td role="delete" class="uk-text-center">
@@ -46,4 +59,3 @@ const stateShowUsersPageContentView = async (modelResult) => {
 
     return page
 }
-

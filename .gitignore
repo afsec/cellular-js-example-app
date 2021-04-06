@@ -1,3 +1,5 @@
 /tmp/
 /prod/
 /dist/
+/api/database*
+/api/nohup*
